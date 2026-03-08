@@ -1,16 +1,17 @@
 FROM node:20-alpine AS base
 
-# Install dependencies
+# Install dependencies (skip postinstall — needs source files)
 FROM base AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --ignore-scripts
 
 # Build the app
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+RUN npx fumadocs-mdx
 RUN npm run build
 
 # Production runner
