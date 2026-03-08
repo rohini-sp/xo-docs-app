@@ -1,88 +1,90 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Cpu, Rocket, Plug2, Network, Zap, Github, Bot, Settings, LayoutTemplate, LifeBuoy } from 'lucide-react';
+import type { ComponentType } from 'react';
 
-const products = [
+const products: { title: string; desc: string; href: string; icon: ComponentType<{ size?: number; className?: string }> }[] = [
   {
     title: 'XO Vibe',
-    desc: 'AI-native browser-based app builder. Describe what you want, watch it get built.',
+    desc: 'AI-native app builder. Describe it, build it.',
     href: '/docs/xo-vibe',
-    icon: '⚡',
+    icon: Cpu,
   },
   {
     title: 'XO Launchpad',
-    desc: 'One-click container deployment. From local build to live URL in minutes.',
+    desc: 'One-click deploy. Local to live in minutes.',
     href: '/docs/xo-launchpad',
-    icon: '🚀',
+    icon: Rocket,
   },
   {
     title: 'XO MCP Server',
-    desc: 'Connect XO to Cursor, Claude, Devin, ChatGPT, and more via MCP.',
+    desc: 'Connect Cursor, Claude, Devin, and more.',
     href: '/docs/xo-mcp-server',
-    icon: '🔌',
+    icon: Plug2,
   },
   {
     title: 'XO Swarm',
-    desc: 'Deploy and manage multi-agent AI systems with persistent knowledge bases.',
+    desc: 'Multi-agent AI with shared memory.',
     href: '/docs/xo-swarm',
-    icon: '🧠',
+    icon: Network,
   },
 ];
 
-const quickLinks = [
-  { title: 'Quickstart', desc: 'Get your first app running', href: '/docs/xo-vibe/quickstart' },
-  { title: 'Deploy from GitHub', desc: 'Push a repo to XO Launchpad', href: '/docs/xo-launchpad/no-code-deployment/deploying-from-github-repository' },
-  { title: 'OpenClaw Setup', desc: 'Deploy your AI agent gateway', href: '/docs/xo-swarm/openclaw' },
-  { title: 'MCP Setup', desc: 'Connect your IDE to XO', href: '/docs/xo-mcp-server/setup' },
-  { title: 'Templates', desc: 'Pre-built deployment templates', href: '/docs/xo-launchpad/templates' },
-  { title: 'Support', desc: 'Get help from our GPT', href: '/docs/xo-support-hub' },
+const quickLinks: { title: string; href: string; icon: ComponentType<{ size?: number; className?: string }> }[] = [
+  { title: 'Quickstart', href: '/docs/xo-vibe/quickstart', icon: Zap },
+  { title: 'Deploy from GitHub', href: '/docs/xo-launchpad/no-code-deployment/deploying-from-github-repository', icon: Github },
+  { title: 'OpenClaw Setup', href: '/docs/xo-swarm/openclaw', icon: Bot },
+  { title: 'MCP Setup', href: '/docs/xo-mcp-server/setup', icon: Settings },
+  { title: 'Templates', href: '/docs/xo-launchpad/templates', icon: LayoutTemplate },
+  { title: 'Support', href: '/docs/xo-support-hub', icon: LifeBuoy },
 ];
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#09090b]">
+    <main className="min-h-screen bg-[#09090b] flex flex-col items-center px-4 pt-10 pb-16">
       {/* Hero */}
-      <div className="flex flex-col items-center pt-24 pb-16 px-4 text-center">
-        <Image src="/xologo.png" alt="XO" width={480} height={192} className="h-44 w-auto mb-6" />
-        <h1 className="text-4xl font-bold text-white tracking-tight mb-3">
-          Documentation
-        </h1>
-        <p className="text-[#a1a1aa] text-lg max-w-md leading-relaxed mb-8">
-          Everything you need to build, deploy, and scale with XO.
-        </p>
-        <div className="flex gap-3">
-          <Link
-            href="/docs"
-            className="bg-[#83d63a] text-[#09090b] font-semibold px-6 py-2.5 rounded-lg text-sm hover:bg-[#96e04f] transition-colors"
-          >
-            Get Started
-          </Link>
-          <Link
-            href="https://xo.builders"
-            target="_blank"
-            className="border border-[#27272a] text-[#fafafa] font-semibold px-6 py-2.5 rounded-lg text-sm hover:bg-[#18181b] transition-colors"
-          >
-            xo.builders
-          </Link>
-        </div>
+      <Image src="/xologo.png" alt="XO" width={320} height={128} className="h-20 w-auto mb-4" />
+      <h1 className="text-2xl font-bold text-white tracking-tight mb-1.5">
+        Documentation
+      </h1>
+      <p className="text-[#a1a1aa] text-sm max-w-sm text-center leading-relaxed mb-5">
+        Everything you need to build, deploy, and scale with XO.
+      </p>
+      <div className="flex gap-3 mb-10">
+        <Link
+          href="/docs"
+          className="bg-[#83d63a] text-[#09090b] font-semibold px-5 py-2 rounded-lg text-sm hover:bg-[#96e04f] transition-colors"
+        >
+          Get Started
+        </Link>
+        <Link
+          href="https://xo.builders"
+          target="_blank"
+          className="border border-[#27272a] text-[#fafafa] font-semibold px-5 py-2 rounded-lg text-sm hover:bg-[#18181b] transition-colors"
+        >
+          xo.builders
+        </Link>
       </div>
 
       {/* Products */}
-      <div className="max-w-4xl mx-auto px-4 pb-12">
-        <h2 className="text-xs font-medium uppercase tracking-widest text-[#a1a1aa] mb-4 px-1">
+      <div className="w-full max-w-3xl mb-8">
+        <h2 className="text-xs font-medium uppercase tracking-widest text-[#a1a1aa] mb-3 px-1">
           Explore by product
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
           {products.map((p) => (
             <Link
               key={p.href}
               href={p.href}
-              className="group border border-[#27272a] rounded-xl p-5 bg-[#111113] hover:bg-[#18181b] hover:border-[#3f3f46] transition-all"
+              className="group border border-[#27272a] rounded-xl p-4 bg-[#111113] hover:bg-[#18181b] hover:border-[#3f3f46] transition-all"
             >
-              <div className="text-2xl mb-3">{p.icon}</div>
-              <div className="font-semibold text-white mb-1 group-hover:text-[#83d63a] transition-colors">
+              <div className="mb-2 p-1.5 rounded-lg border border-[#27272a] bg-[#18181b] w-fit">
+                <p.icon size={16} className="text-[#83d63a]" />
+              </div>
+              <div className="font-semibold text-sm text-white mb-0.5 group-hover:text-[#83d63a] transition-colors">
                 {p.title}
               </div>
-              <div className="text-sm text-[#a1a1aa] leading-relaxed">
+              <div className="text-xs text-[#a1a1aa] leading-relaxed">
                 {p.desc}
               </div>
             </Link>
@@ -91,22 +93,20 @@ export default function HomePage() {
       </div>
 
       {/* Quick links */}
-      <div className="max-w-4xl mx-auto px-4 pb-24">
-        <h2 className="text-xs font-medium uppercase tracking-widest text-[#a1a1aa] mb-4 px-1">
+      <div className="w-full max-w-3xl">
+        <h2 className="text-xs font-medium uppercase tracking-widest text-[#a1a1aa] mb-3 px-1">
           Popular guides
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
           {quickLinks.map((q) => (
             <Link
               key={q.href}
               href={q.href}
-              className="group border border-[#27272a] rounded-xl px-5 py-4 hover:bg-[#111113] hover:border-[#3f3f46] transition-all"
+              className="group flex items-center gap-2.5 border border-[#27272a] rounded-xl px-4 py-3 hover:bg-[#111113] hover:border-[#3f3f46] transition-all"
             >
+              <q.icon size={14} className="text-[#a1a1aa] group-hover:text-[#83d63a] transition-colors shrink-0" />
               <div className="font-medium text-sm text-white group-hover:text-[#83d63a] transition-colors">
                 {q.title}
-              </div>
-              <div className="text-sm text-[#71717a] mt-0.5">
-                {q.desc}
               </div>
             </Link>
           ))}
