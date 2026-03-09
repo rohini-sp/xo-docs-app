@@ -23,9 +23,9 @@ const products: { title: string; desc: string; href: string; icon: ComponentType
     icon: Plug2,
   },
   {
-    title: 'XO Swarm',
-    desc: 'Multi-agent AI with shared memory.',
-    href: '/docs/xo-swarm',
+    title: 'XO Workspaces',
+    desc: 'AI agent workspaces with shared memory.',
+    href: '/docs/xo-workspaces',
     icon: Network,
   },
 ];
@@ -33,7 +33,7 @@ const products: { title: string; desc: string; href: string; icon: ComponentType
 const quickLinks: { title: string; href: string; icon: ComponentType<{ size?: number; className?: string }> }[] = [
   { title: 'Quickstart', href: '/docs/xo-vibe/quickstart', icon: Zap },
   { title: 'Deploy from GitHub', href: '/docs/xo-launchpad/no-code-deployment/deploying-from-github-repository', icon: Github },
-  { title: 'OpenClaw Setup', href: '/docs/xo-swarm/openclaw', icon: Bot },
+  { title: 'OpenClaw Setup', href: '/docs/xo-workspaces/openclaw', icon: Bot },
   { title: 'MCP Setup', href: '/docs/xo-mcp-server/setup', icon: Settings },
   { title: 'Templates', href: '/docs/xo-launchpad/templates', icon: LayoutTemplate },
   { title: 'Support', href: '/docs/xo-support-hub', icon: LifeBuoy },

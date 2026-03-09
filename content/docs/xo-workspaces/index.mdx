@@ -1,6 +1,6 @@
 ---
-title: XO Swarm
-description: Deploy and manage AI agent swarms with persistent knowledge bases on XO.
+title: XO Workspaces
+description: Deploy and manage AI agent workspaces with persistent knowledge bases on XO.
 icon: Network
 ---
 
@@ -9,13 +9,13 @@ import { Cards, Card } from 'fumadocs-ui/components/card';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Bot } from 'lucide-react';
 
-XO Swarm lets you run multi-agent AI systems that share memory, coordinate tasks, and respond across channels — all hosted and managed through XO.
+XO Workspaces lets you run multi-agent AI systems that share memory, coordinate tasks, and respond across channels — all hosted and managed through XO.
 
-<VideoEmbed id="a5a6481638a04ec49472a9b94c0959ab" title="XO Swarm Overview" />
+<VideoEmbed id="a5a6481638a04ec49472a9b94c0959ab" title="XO Workspaces Overview" />
 
-## What is XO Swarm?
+## What is XO Workspaces?
 
-XO Swarm is XO's multi-agent orchestration layer. Deploy a swarm of AI agents that:
+XO Workspaces is XO's multi-agent orchestration layer. Deploy AI agents that:
 
 - Share a persistent **knowledge base** — agents learn and remember across sessions
 - Coordinate autonomously across tasks without manual handoffs
@@ -24,12 +24,12 @@ XO Swarm is XO's multi-agent orchestration layer. Deploy a swarm of AI agents th
 
 ## Knowledge Bases
 
-Every XO Swarm deployment includes a knowledge base your agents can read from and write to in real time. Feed it documentation, product data, internal processes — your agents use it to answer questions and make decisions.
+Every XO Workspaces deployment includes a knowledge base your agents can read from and write to in real time. Feed it documentation, product data, internal processes — your agents use it to answer questions and make decisions.
 
 Update a knowledge base via the [XO MCP Server](/docs/xo-mcp-server) using the `update_knowledgebase_using_text` tool, or query it with `ask_question`.
 
 <Callout type="info">
-  Knowledge bases are scoped to your deployment. Each Swarm has its own isolated context.
+  Knowledge bases are scoped to your deployment. Each workspace has its own isolated context.
 </Callout>
 
 ## Projects
@@ -39,6 +39,6 @@ Update a knowledge base via the [XO MCP Server](/docs/xo-mcp-server) using the `
     icon={<Bot size={18} className="text-green-400" />}
     title="OpenClaw"
     description="Deploy OpenClaw as a fully managed AI agent on XO. Setup, configuration, and troubleshooting."
-    href="/docs/xo-swarm/openclaw"
+    href="/docs/xo-workspaces/openclaw"
   />
 </Cards>
