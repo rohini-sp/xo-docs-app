@@ -5,7 +5,9 @@
       "WebSearch",
       "WebFetch(domain:www.loom.com)",
       "Bash(xargs ls:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "mcp__plugin_context7_context7__query-docs",
+      "WebFetch(domain:github.com)"
     ]
   }
 }
