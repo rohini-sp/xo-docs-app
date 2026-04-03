@@ -1,0 +1,90 @@
+---
+title: Access and Restart Your Machine
+description: Stop, restart, and monitor your workspace machine from the XO dashboard.
+icon: RefreshCw
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+
+If your workspace IDE isn't loading or your environment feels stuck, a quick stop-and-restart cycle usually resolves it. This guide covers every button you'll interact with on the dashboard to manage your machine.
+
+## What You'll Need
+
+- An [XO account](/docs/xo-workspaces/core-platform-setup/create-account) with an active workspace
+
+## Dashboard Button Layout
+
+Here's a quick reference for the key buttons on your workspace dashboard:
+
+| Button | What It Does |
+|--------|-------------|
+| **Configure** | Opens the workspace management panel where you access your IDE and machine controls |
+| **IDE buttons** (Code-Server, etc.) | Opens the selected browser-based IDE for your workspace |
+| **Stop** | Shuts down your workspace machine |
+| **Start** | Boots your workspace machine back up |
+| **Refresh** | Reloads the dashboard panel to reflect the latest machine status |
+
+## Restart Your Machine
+
+<Steps>
+  <Step>
+    ### Open the Configure Panel
+
+    From your project dashboard, click **Configure** to open the workspace management panel.
+
+    ![Click Configure](/images/core-platform-setup/access-restart-machine-1.jpeg)
+  </Step>
+  <Step>
+    ### Access Your IDE
+
+    Click on your preferred IDE (e.g. **Code-Server**) to open it. If the IDE fails to load or hangs, proceed to the next step to restart the machine.
+
+    ![Select your IDE](/images/core-platform-setup/access-restart-machine-2.jpeg)
+  </Step>
+  <Step>
+    ### Refresh the Status
+
+    Click **Refresh** to get the current machine status before making changes.
+
+    ![Click Refresh](/images/core-platform-setup/access-restart-machine-3.jpeg)
+  </Step>
+  <Step>
+    ### Stop the Machine
+
+    Click **Stop** to shut down the workspace machine.
+
+    ![Click Stop](/images/core-platform-setup/access-restart-machine-4.jpeg)
+  </Step>
+  <Step>
+    ### Confirm the Machine Has Stopped
+
+    Click **Refresh** again and verify the status reads **stopped**.
+
+    ![Click Refresh again](/images/core-platform-setup/access-restart-machine-5.jpeg)
+
+    ![Machine status: stopped](/images/core-platform-setup/access-restart-machine-6.jpeg)
+  </Step>
+  <Step>
+    ### Start the Machine
+
+    Click **Start** to boot the machine back up.
+
+    ![Click Start](/images/core-platform-setup/access-restart-machine-7.jpeg)
+
+    The status changes to **starting** while the machine initializes.
+
+    ![Machine status: starting](/images/core-platform-setup/access-restart-machine-8.jpeg)
+  </Step>
+  <Step>
+    ### Verify the Machine Is Running
+
+    After a few moments, the status updates to **running**. Your workspace is now ready.
+
+    ![Machine status: running](/images/core-platform-setup/access-restart-machine-9.jpeg)
+  </Step>
+</Steps>
+
+<Callout type="info">
+  If the machine stays in a **starting** state for more than a couple of minutes, try stopping and starting it again. If the issue persists, reach out via the [XO Support Hub](/docs/xo-support-hub).
+</Callout>
