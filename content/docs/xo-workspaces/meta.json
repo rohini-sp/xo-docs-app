@@ -2,5 +2,5 @@
   "title": "XO Workspaces",
   "root": true,
   "icon": "Network",
-  "pages": ["index", "openclaw"]
+  "pages": ["index", "core-platform-setup", "openclaw"]
 }

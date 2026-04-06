@@ -1,0 +1,39 @@
+---
+title: Core Platform Setup and Button Layout
+description: Set up your XO account, navigate the dashboard, and manage your workspace machines.
+icon: Settings
+---
+
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { UserPlus, RefreshCw, Monitor, Share2 } from 'lucide-react';
+
+Everything you need to go from zero to a running workspace. These guides walk you through account creation, the dashboard buttons and controls, machine management, and project sharing.
+
+## Guides
+
+<Cards>
+  <Card
+    icon={<UserPlus size={18} className="text-green-400" />}
+    title="Create an Account"
+    description="Register on XO, pick your username, and select a plan."
+    href="/docs/xo-workspaces/core-platform-setup/create-account"
+  />
+  <Card
+    icon={<RefreshCw size={18} className="text-green-400" />}
+    title="Access and Restart Your Machine"
+    description="Stop, restart, and monitor your workspace machine from the dashboard."
+    href="/docs/xo-workspaces/core-platform-setup/access-restart-machine"
+  />
+  <Card
+    icon={<Monitor size={18} className="text-green-400" />}
+    title="Access Your Machine via VS Code Server"
+    description="Open a browser-based VS Code IDE and start running commands."
+    href="/docs/xo-workspaces/core-platform-setup/vs-code-server"
+  />
+  <Card
+    icon={<Share2 size={18} className="text-green-400" />}
+    title="Share Your Project"
+    description="Grant and revoke collaborator access by email."
+    href="/docs/xo-workspaces/core-platform-setup/share-project"
+  />
+</Cards>
