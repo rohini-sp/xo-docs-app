@@ -1,0 +1,10 @@
+{
+  "title": "Core Platform Setup",
+  "pages": [
+    "index",
+    "create-account",
+    "access-restart-machine",
+    "vs-code-server",
+    "share-project"
+  ]
+}
